@@ -5,6 +5,7 @@ import SecStepForm from "./components/SecStepForm";
 import ThirdStepForm from "./components/ThirdStepForm";
 import type { FormValues } from "./types/formTypes";
 import FormResult from "./components/FormResult";
+import AllData from "./components/AllData";
 
 function App() {
   const [btnState, setBtnState] = useState<number>(1);
@@ -37,6 +38,9 @@ function App() {
       )}
       {btnState === 4 && (
         <FormResult data={data} setBtnState={setBtnState} setData={setData} />
+      )}
+        {btnState === 5 && (
+        < AllData/>
       )}
     </>
   );

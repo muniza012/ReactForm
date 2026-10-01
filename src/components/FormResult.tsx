@@ -10,7 +10,17 @@ type FormResultProps = {
 }
 
 function FormResult({ data, setBtnState, setData }: FormResultProps) {
+ 
   function handleClick() {
+    // local storage
+  
+    const existingData =  localStorage.getItem("formData");
+    const arrayData: FormValues[] = existingData? JSON.parse(existingData):[]
+      arrayData.push(data);
+    localStorage.setItem('formData', JSON.stringify(arrayData))
+  
+  
+   
     setBtnState(1);
     setData({
       fullName: "",
